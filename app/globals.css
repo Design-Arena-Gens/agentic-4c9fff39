@@ -1,0 +1,141 @@
+:root {
+  color-scheme: dark;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background: radial-gradient(circle at top, #101726, #05060a 55%);
+  color: #f4f6fb;
+  overflow-x: hidden;
+}
+
+.page {
+  min-height: 100vh;
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  overflow: hidden;
+  text-align: center;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 620px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.hero__title {
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  line-height: 1.05;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  margin: 0;
+  text-wrap: balance;
+}
+
+.hero__subtitle {
+  margin: 0;
+  font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+  line-height: 1.65;
+  color: rgba(240, 244, 255, 0.72);
+  text-wrap: pretty;
+}
+
+.hero__button {
+  background: rgba(244, 246, 255, 0.08);
+  color: inherit;
+  border: 1px solid rgba(244, 246, 255, 0.26);
+  border-radius: 9999px;
+  padding: 0.7rem 1.9rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 220ms ease, background 220ms ease,
+    border-color 220ms ease, box-shadow 220ms ease;
+  backdrop-filter: blur(16px);
+}
+
+.hero__button:hover {
+  background: rgba(244, 246, 255, 0.16);
+  border-color: rgba(244, 246, 255, 0.4);
+  transform: translateY(-1px);
+  box-shadow: 0 18px 32px rgba(11, 15, 35, 0.35);
+}
+
+.hero__button:active {
+  transform: translateY(0);
+}
+
+.hero__footer {
+  position: absolute;
+  bottom: clamp(1.5rem, 4vw, 3rem);
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  color: rgba(244, 246, 255, 0.5);
+  z-index: 2;
+}
+
+.gradient {
+  position: absolute;
+  inset: -40%;
+  margin: auto;
+  width: 140%;
+  aspect-ratio: 1.2;
+  filter: blur(75px);
+  opacity: 0.65;
+  transform: rotate(7deg);
+  z-index: 1;
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+
+.gradient-1 {
+  background: linear-gradient(130deg, #6c4bf4, #ff64c2, #ffba66);
+}
+
+.gradient-2 {
+  background: linear-gradient(130deg, #2b83ff, #19dbd0, #54f06c);
+}
+
+.gradient-3 {
+  background: linear-gradient(130deg, #ffd74f, #9cff6b, #00c985);
+}
+
+.gradient-4 {
+  background: linear-gradient(130deg, #5ab0ff, #8178ff, #b44bff);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gradient {
+    transition: none;
+  }
+
+  .hero__button {
+    transition: none;
+  }
+}
